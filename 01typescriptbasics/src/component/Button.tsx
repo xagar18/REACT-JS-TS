@@ -1,15 +1,16 @@
 interface ButtonProps {
   text: string;
-  changecol?: () => void;
+  changecol():  void;
 }
 
 function Button({ text, changecol }: ButtonProps) {
   return (
     <button
-      className={`h-10 px-5 rounded-lg mt-5 ml-5 text-black border-2 border-black bg-${text}`}
+      className={"h-10 px-5 rounded-xl mt-5 ml-5 text-black border-[1px] border-black "}
       onClick={changecol}
+      style={{ backgroundColor: "white" }}
     >
-      {text}
+      {text.toLocaleUpperCase()}
     </button>
   );
 }
