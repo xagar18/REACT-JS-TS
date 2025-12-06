@@ -1,43 +1,26 @@
 import { useState } from "react";
 import "./App.css";
 import QueueForm from "./components/QueueForm";
+import { useStore } from './store/queueStore';
 
 function App() {
-  const [queue, setQueue] = useState([]);
 
-  const addQueueData = (name, service, status) => {
-    setQueue([...queue, { name, service, status, id: Date.now() }]);
-  };
-
-  const removeData = (id) => {
-    const newData = queue.filter((data) => data.id != id);
-    setQueue(newData);
-  };
-
-  const changeStatus = (id, status) => {
-    const updatedQueue = queue.map((data) => {
-      if (data.id == id) {
-        return { ...data, status: status };
-      }
-      return data;
-    });
-    setQueue(updatedQueue);
-  };
+  const { queue, addQueue, removeQueue, updateStatus } = useStore();
 
   return (
     <>
-      <div className="min-h-screen bg-gray-900 text-white p-6">
+      <div className="min-h-screen flex justify-center items-center bg-gray-900 text-white p-6">
         <div className="max-w-5xl mx-auto">
           <header className="mb-6 flex items-center justify-between">
             <h1 className="text-2xl font-bold">Queue Management</h1>
           </header>
 
           <main className="flex gap-8 items-start">
-            <QueueForm onAddData={addQueueData} />
+            <QueueForm onAddData={addQueue} />
             <QueueDisplay
               queue={queue}
-              removeData={removeData}
-              changeStatus={changeStatus}
+              removeData={removeQueue}
+              changeStatus={updateStatus}
             />
           </main>
         </div>

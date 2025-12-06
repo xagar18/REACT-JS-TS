@@ -5,7 +5,6 @@ const QueueForm = ({ onAddData }) => {
   const [option, setOption] = useState("");
 
   const addDataInQueue = () => {
-
     if (!name.trim() || !option) {
       return;
     }
