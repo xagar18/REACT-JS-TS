@@ -1,42 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #111;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
+}
+
+.container {
+  max-width: 700px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 40px 20px;
+}
+
+.greeting {
   text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.greeting h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.greeting p {
+  font-size: 1.2rem;
+  color: #aaa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  padding: 2em;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 25px;
+  border: 1px solid #333;
 }
 
-.read-the-docs {
+.card h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.info p {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  color: #ddd;
+}
+
+.info p:last-child {
+  border-bottom: none;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #444;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  background: #222;
+  color: #fff;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.input-group input::placeholder {
   color: #888;
+}
+
+.input-group button,
+button {
+  width: 100%;
+  padding: 12px 20px;
+  background: #fff;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.input-group button:hover,
+button:hover {
+  background: #ddd;
+}
+
+.full-width {
+  width: 100%;
 }
